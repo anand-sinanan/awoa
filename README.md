@@ -1,8 +1,17 @@
-# heroes
-Angular (4.0 - slight changes/improvements from AngularJS) 
+## Amazing Works of Art ##
 
-Tour of Heroes + some integration into it from Advanced topics, so far mostly animations. Really not necessary since they provide examples but they're pretty much independent of work done during the tutorial.
+What was originally Augmented Widgets Overlays Animations (yah ... cheesy)
 
-Notes: 
--in src/app, mock-heroes files are no longer necessary once successfully moving to inMemoryWebApi
+The concept is to start as a simple Gallery / Wallpaper website with a plan to evolve it into something more!
 
+Based on Angular Quickstart, there may be some unnecessary things that may eventually be used.
+
+
+### Installation ###
+
+* `git clone https://github.com/anand-sinanan/homestead.git Code`
+* `cd Code`
+* `npm install`
+* `npm start` 
+
+(Doesn't play nice with IE at the moment)
