@@ -1,4 +1,4 @@
-## Amazing Works of Art ##
+## Amazing Works Of Art ##
 
 What was originally **A**ugmented **W**idgets **O**verlays **A**nimations (yah ... cheesy)
 
