@@ -7,7 +7,7 @@ Based on Angular Quickstart using [Angular (4.1)](https://angular.io/) + [Bootst
 
 There may be some 'unnecessary' things included that may get used later.
 
-Full credit to [Jason Watmore] (http://jasonwatmore.com/) for the guide on how to Auth (gave up on trying to custom authenticate using InMemoryWebApiModule)
+Full credit to [Jason Watmore](http://jasonwatmore.com/) for the guide on how to Auth (gave up on trying to custom authenticate using InMemoryWebApiModule)
 
 Definitely want to keep this project plug and play, however he's also inspired me to make a MEAN version (coming soon!)
 
