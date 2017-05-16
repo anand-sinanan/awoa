@@ -15,8 +15,12 @@ var http_1 = require("@angular/http");
 var app_routing_module_1 = require("./app-routing.module");
 // Imports for loading & configuring the in-memory web api
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
-var in_memory_data_service_1 = require("./in-memory-data.service");
-//Bootstrap!! Didn't seem to be working for latest bootstrap
+var in_memory_data_service_1 = require("./local-dbs/in-memory-web-api/in-memory-data.service");
+//Imports for the Mock way for user authenticate
+var testing_1 = require("@angular/http/testing");
+var http_2 = require("@angular/http");
+var fake_backend_1 = require("./local-dbs/mock-db/fake-backend");
+//Bootstrap!! Didn't seem to be working for latest bootstrap/ using CDN instead
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 var app_component_1 = require("./app.component");
 // Don't exist yet, Gallery for all public images,
@@ -27,10 +31,18 @@ var app_component_1 = require("./app.component");
 var dashboard_component_1 = require("./views/dashboard/dashboard.component");
 var marketing_component_1 = require("./views/marketing/marketing.component");
 var gallery_component_1 = require("./views/gallery/gallery.component");
+var register_component_1 = require("./views/register/register.component");
+var login_component_1 = require("./views/login/login.component");
 var navbar_component_1 = require("./partials/navbar/navbar.component");
 var carousel_component_1 = require("./partials/carousel/carousel.component");
 var footer_component_1 = require("./partials/footer/footer.component");
-var image_service_1 = require("./services/image.service");
+var alert_component_1 = require("./partials/alert/alert.component");
+var image_service_1 = require("./services/image/image.service");
+var alert_service_1 = require("./services/alert/alert.service");
+var user_service_1 = require("./services/user/user.service");
+//Auth
+var auth_guard_1 = require("./services/auth/auth-guard");
+var authentication_service_1 = require("./services/auth/authentication.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -56,10 +68,22 @@ AppModule = __decorate([
             footer_component_1.FooterComponent,
             carousel_component_1.CarouselComponent,
             marketing_component_1.MarketingComponent,
-            gallery_component_1.GalleryComponent
+            gallery_component_1.GalleryComponent,
+            alert_component_1.AlertComponent,
+            login_component_1.LoginComponent,
+            register_component_1.RegisterComponent
         ],
         providers: [
-            image_service_1.ImageService
+            //auth
+            auth_guard_1.AuthGuard,
+            authentication_service_1.AuthenticationService,
+            image_service_1.ImageService,
+            user_service_1.UserService,
+            alert_service_1.AlertService,
+            //mock db stuff
+            fake_backend_1.fakeBackendProvider,
+            testing_1.MockBackend,
+            http_2.BaseRequestOptions
         ],
         bootstrap: [app_component_1.AppComponent]
     })

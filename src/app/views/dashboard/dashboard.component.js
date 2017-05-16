@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var image_service_1 = require("../../services/image.service");
+var image_service_1 = require("../../services/image/image.service");
 var DashboardComponent = (function () {
     function DashboardComponent(imageService) {
         this.imageService = imageService;

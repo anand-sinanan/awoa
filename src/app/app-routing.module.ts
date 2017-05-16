@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent }   from './views/dashboard/dashboard.component';
 import { GalleryComponent }   from './views/gallery/gallery.component';
+import { RegisterComponent }   from './views/register/register.component';
+import { LoginComponent }   from './views/login/login.component';
 
-
+import { AuthGuard } from './services/auth/auth-guard';
 //import { ImagesComponent }      from './images.component';
 //import { ImageDetailComponent }  from './image-detail.component';
 
@@ -16,7 +18,12 @@ const routes: Routes = [
   { path: 'dashboard',  component: DashboardComponent },
   //{ path: 'images/detail/:id', component: ImageDetailComponent },
   //{ path: 'images',     component: ImagesComponent },
-  { path: 'gallery',    component: GalleryComponent }
+  { path: 'gallery',    component: GalleryComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

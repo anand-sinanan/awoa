@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Image } from '../../collections/image';
-import { ImageService } from '../../services/image.service';
+import { Image } from '../../collections/image/image';
+import { ImageService } from '../../services/image/image.service';
 
 @Component({
   selector: 'my-dashboard',

@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 
 
   <navbar></navbar>
-<!--
+  <!--
   <h1>{{title}}</h1>
   <nav class = "navbar navbar-inverse">
     <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>

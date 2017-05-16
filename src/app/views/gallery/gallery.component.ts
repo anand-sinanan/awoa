@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Image } from '../../collections/image';
-import { ImageService } from '../../services/image.service';
+import { Image } from '../../collections/image/image';
+import { ImageService } from '../../services/image/image.service';
 
 import {
   trigger,

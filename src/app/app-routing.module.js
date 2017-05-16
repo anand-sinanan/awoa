@@ -10,6 +10,9 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var dashboard_component_1 = require("./views/dashboard/dashboard.component");
 var gallery_component_1 = require("./views/gallery/gallery.component");
+var register_component_1 = require("./views/register/register.component");
+var login_component_1 = require("./views/login/login.component");
+var auth_guard_1 = require("./services/auth/auth-guard");
 //import { ImagesComponent }      from './images.component';
 //import { ImageDetailComponent }  from './image-detail.component';
 //import { CarouselComponent } from './partials/carousel/carousel.component';
@@ -19,7 +22,11 @@ var routes = [
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
     //{ path: 'images/detail/:id', component: ImageDetailComponent },
     //{ path: 'images',     component: ImagesComponent },
-    { path: 'gallery', component: gallery_component_1.GalleryComponent }
+    { path: 'gallery', component: gallery_component_1.GalleryComponent, canActivate: [auth_guard_1.AuthGuard] },
+    { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'register', component: register_component_1.RegisterComponent },
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

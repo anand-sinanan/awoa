@@ -9,9 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from './local-dbs/in-memory-web-api/in-memory-data.service';
+//Imports for the Mock way for user authenticate
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+import { fakeBackendProvider } from './local-dbs/mock-db/fake-backend';
 
-//Bootstrap!! Didn't seem to be working for latest bootstrap
+//Bootstrap!! Didn't seem to be working for latest bootstrap/ using CDN instead
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -26,11 +30,21 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { MarketingComponent } from './views/marketing/marketing.component';
 import { GalleryComponent } from './views/gallery/gallery.component';
+import { RegisterComponent } from './views/register/register.component';
+import { LoginComponent } from './views/login/login.component';
 
 import { NavbarComponent} from './partials/navbar/navbar.component';
 import { CarouselComponent} from './partials/carousel/carousel.component';
 import { FooterComponent } from './partials/footer/footer.component';
-import {ImageService} from './services/image.service';
+import { AlertComponent } from './partials/alert/alert.component';
+
+import { ImageService } from './services/image/image.service';
+import { AlertService } from './services/alert/alert.service';
+import { UserService } from './services/user/user.service';
+
+//Auth
+import {AuthGuard} from './services/auth/auth-guard';
+import {AuthenticationService} from './services/auth/authentication.service';
 
 @NgModule({
     imports: [
@@ -52,10 +66,25 @@ import {ImageService} from './services/image.service';
         FooterComponent,
         CarouselComponent,
         MarketingComponent,
-        GalleryComponent
+        GalleryComponent,
+        AlertComponent,
+        LoginComponent,
+        RegisterComponent
     ],
     providers: [
-        ImageService
+        //auth
+        AuthGuard,
+        AuthenticationService,
+
+        ImageService,
+        UserService,
+        AlertService,
+
+        //mock db stuff
+        fakeBackendProvider,
+        MockBackend,
+        BaseRequestOptions
+
     ],
     bootstrap: [AppComponent]
 })
