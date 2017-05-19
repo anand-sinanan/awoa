@@ -10,14 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var authentication_service_1 = require("../../services/auth/authentication.service");
 var NavbarComponent = (function () {
-    function NavbarComponent() {
-        this.isCollapsed = true;
+    function NavbarComponent(auth) {
+        var _this = this;
+        this.auth = auth;
+        this.loggedIn = this.auth.isLoggedIn();
+        this.loggedIn.subscribe(function (res) {
+            console.log("construct: isLoggedIn is " + res);
+            _this.currentUser = JSON.parse(localStorage.getItem('currentUser')); //why does this not set outside of suscribe?
+            if (_this.currentUser)
+                console.log(_this.currentUser.username);
+            else {
+                console.log(JSON.parse(localStorage.getItem('currentUser')));
+            }
+        });
     }
-    NavbarComponent.prototype.collapse = function (event) {
-        console.log(event);
+    NavbarComponent.prototype.logout = function () {
+        this.auth.logout();
+        console.log("Sign Out triggered (navbar)");
+        // localStorage.removeItem('currentUser');
+        // this.router.navigate(['/login']);
     };
-    NavbarComponent.prototype.ngOnInit = function () { };
+    NavbarComponent.prototype.ngOnInit = function () {
+        this.loggedIn.subscribe(function (res) { console.log("ngoninit: isLoggedIn is " + res); });
+        if (this.currentUser)
+            console.log("ngoninit" + this.currentUser.username);
+        else
+            console.log("ngoninit: currentUser is " + localStorage.getItem('currentUser'));
+    };
     return NavbarComponent;
 }());
 NavbarComponent = __decorate([
@@ -26,7 +47,7 @@ NavbarComponent = __decorate([
         templateUrl: './navbar.component.html',
         styleUrls: ['./navbar.component.css'],
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService])
 ], NavbarComponent);
 exports.NavbarComponent = NavbarComponent;
 //# sourceMappingURL=navbar.component.js.map
