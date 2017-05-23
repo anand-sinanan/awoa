@@ -37,6 +37,7 @@ import { NavbarComponent} from './partials/navbar/navbar.component';
 import { CarouselComponent} from './partials/carousel/carousel.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { AlertComponent } from './partials/alert/alert.component';
+import { ThumbComponent } from './partials/thumb/thumb.component';
 
 import { ImageService } from './services/image/image.service';
 import { AlertService } from './services/alert/alert.service';
@@ -65,6 +66,7 @@ import {AuthenticationService} from './services/auth/authentication.service';
         NavbarComponent,
         FooterComponent,
         CarouselComponent,
+        ThumbComponent,
         MarketingComponent,
         GalleryComponent,
         AlertComponent,

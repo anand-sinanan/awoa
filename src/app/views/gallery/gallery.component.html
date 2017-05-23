@@ -1,11 +1,16 @@
+<!-- Gallery! -->
+<div class="gallery">
+
+
 <!-- Becomes jumbotron component -->
 <section class="jumbotron text-center">
      <div class="container">
        <h1 class="jumbotron-heading">Welcome to the Gallery</h1>
-       <p class="lead text-muted">We hope you enjoy your stay, discover something awesome, and feel inspired to create.</p>
+       <p class="lead">We hope you enjoy your stay, discover something awesome, and feel inspired to create.</p>
        <p class="lead">
-         (Only want below to show up for authenticated user, guests default to public images and have the option removed.)
+         Only want below to show up for authenticated user, guests default to public images and have the option removed. Perhaps have another section entirely to deal with user image CRUD.
        </p>
+       <p class="lead">Or maybe even have controls here to deal with filtering images?</p>
        <p>
          <a href="#" class="btn btn-primary">Shared</a>
          <a href="#" class="btn btn-secondary">Personal</a>
@@ -17,50 +22,24 @@
    <div class="album text-muted">
      <div class="container">
 
-       <!-- To do: Becomes thumb component -->
+
+       <!-- thumb component renders differently somehow, sticking to old way -->
+       <!-- <thumb [images]="images"></thumb> -->
+
        <div class="row">
-         <div class="card">
-           <img src="./app/imgs/1.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-         </div>
-        <!-- end thumb -->
 
-         <div class="card">
-           <img src="./app/imgs/2.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+         <ng-container *ngFor="let image of images; let i = first">
+         <div class="card card-inverse">
+           <a href="./app{{ image.path }}">
+           <img class="d-block img-fluid" src="./app{{ image.path }}" [attr.alt]="'Slide ' + index" >
+           </a>
+           <p class="card-text card-img-overlay">{{image.name}}</p>
+           <p class="card-text"> Controls here eg. (#) hearts (#) views, (#) downloads</p>
          </div>
+       </ng-container>
 
-         <div class="card">
-           <img src="./app/imgs/3.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-         </div>
-
-         <div class="card">
-           <img src="./app/imgs/4.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-         </div>
-         <div class="card">
-           <img src="./app/imgs/5.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-         </div>
-         <div class="card">
-           <img src="./app/imgs/6.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-         </div>
-
-         <div class="card">
-           <img src="./app/imgs/1.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-         </div>
-         <div class="card">
-           <img src="./app/imgs/2.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-         </div>
-         <div class="card">
-           <img src="./app/imgs/3.jpg" alt="Card image cap" width="328" height="280">
-           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-         </div>
-       </div>
 
      </div>
    </div>
+
+ </div>  <!--  end gallery -->

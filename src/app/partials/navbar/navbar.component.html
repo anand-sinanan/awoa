@@ -1,19 +1,27 @@
 <div class="mynav sticky-top">
 
 
-<div class="collapse message sticky-top" id="navbarToggleExternalContent">
-  <div class="p-4">
-    <h4 class="text-white">
-      <b>A</b>mazing <b>W</b>orks <b>O</b>f <b>A</b>rt
-      </h4>
-
-    <p class="text-white">
-      <!-- <span class="text-muted">(or <b>A</b>ugmented <b>W</b>idgets <b>O</b>verlays <b>A</b>nimations...I know...nerd corn)</span> -->
-      <br>Sure it's catchy from a marketing perspective, only here's what I actually believe to be true : we are all works of art, and my goal is to help you become an artist :)
-    </p>
+<div class="collapse message" id="navbarToggleExternalContent">
+  <div class="container">
+          <div class="row">
+            <div class="col-sm-8 py-4">
+              <h4 class="text-white"><b>A</b>mazing <b>W</b>orks <b>O</b>f <b>A</b>rt</h4>
+              <p class="text-white">Sure it's catchy from a marketing perspective, only here's what I actually believe to be true : we are all works of art, and my goal is to help you become an artist :)</p>
+              <p class="text-muted">(Click 'About' again to hide this)</p>
+            </div>
+            <div class="col-sm-4 py-4">
+              <h4 class="text-white"><b>Contact</b></h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
   </div>
+
 </div>
-<nav class="navbar navbar-toggleable-md navbar-inverse sticky-top bg-faded">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-faded">
 
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,7 +34,7 @@
 
       <li *ngIf="loggedIn | async; else guestBlock" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Hi, {{ (this.auth.hasToken()? this.currentUser.username:'Auth but no local storage')  }}!
+          Welcome back, {{ (this.auth.hasToken()? this.currentUser.username:'Auth but no local storage')  }}!
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Profile</a>
@@ -88,7 +96,6 @@
 
   </div>
   <!-- Cute position on right side -->
-<alert></alert>
 </nav>
 <div class="collapse message" id="navbarToggleExternalContent1">
   <div class=" p-4">
@@ -98,4 +105,5 @@
       </span>
   </div>
 </div>
+<alert></alert>
 </div>

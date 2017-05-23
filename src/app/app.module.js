@@ -37,6 +37,7 @@ var navbar_component_1 = require("./partials/navbar/navbar.component");
 var carousel_component_1 = require("./partials/carousel/carousel.component");
 var footer_component_1 = require("./partials/footer/footer.component");
 var alert_component_1 = require("./partials/alert/alert.component");
+var thumb_component_1 = require("./partials/thumb/thumb.component");
 var image_service_1 = require("./services/image/image.service");
 var alert_service_1 = require("./services/alert/alert.service");
 var user_service_1 = require("./services/user/user.service");
@@ -67,6 +68,7 @@ AppModule = __decorate([
             navbar_component_1.NavbarComponent,
             footer_component_1.FooterComponent,
             carousel_component_1.CarouselComponent,
+            thumb_component_1.ThumbComponent,
             marketing_component_1.MarketingComponent,
             gallery_component_1.GalleryComponent,
             alert_component_1.AlertComponent,

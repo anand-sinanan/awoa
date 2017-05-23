@@ -11,6 +11,8 @@ Full credit to [Jason Watmore](http://jasonwatmore.com/) for the guide on how to
 
 Definitely want to keep this project plug and play, however he's also inspired me to make a MEAN version (coming soon!)
 
+At the moment, only registered users can access the Gallery section. This will change when user specific features are implemented.
+
 ### Installation ###
 
 * `git clone https://github.com/anand-sinanan/awoa.git Code`

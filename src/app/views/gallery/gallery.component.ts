@@ -17,7 +17,8 @@ import {
     selector: 'gallery',
     templateUrl: './gallery.component.html',
     styleUrls: [
-      './gallery.component.css'
+      './gallery.component.css',
+      '../../../partials/thumb/thumb.component.css'
     ],
     providers: [
         ImageService,
